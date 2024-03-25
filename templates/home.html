@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                validate1();
+                validate2();
+                validate3();
+            });
+
+            function validate1(){
+                if($('#floatingTextarea1').val().length>0){
+                    $('#notSet1').hide(),
+                    $('#set1').show()
+                }
+                else{
+                    $('#notSet1').show(),
+                    $('#set1').hide()
+                }
+            }
+
+            function validate2(){
+                if($('#floatingTextarea2').val().length>0){
+                    $('#notSet2').hide(),
+                    $('#set2').show()
+                }
+                else{
+                    $('#notSet2').show(),
+                    $('#set2').hide()
+                }
+            }
+
+            function validate3(){
+                if($('#floatingTextarea3').val().length>0){
+                    $('#notSet3').hide(),
+                    $('#set3').show()
+                }
+                else{
+                    $('#notSet3').show(),
+                    $('#set3').hide()
+                }
+            }
+        </script>
+        <style>
+            textarea{
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body class="p-5">
+        <div class="row">
+        <form method="POST" action="/evaluate" class="mb-3">
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#answer" role="button">Student's Answer</a>
+                    <span class="mx-3 badge bg-danger" id="notSet1">NOT SET</span><span class="mx-3 badge bg-success" id="set1">READY</span><br/>
+                    <div class="form-floating mb-3 collapse" id="answer" >
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea1" style="height: 500px" onclick="validate1()" onkeyup="validate1()" name="stu_ans" required></textarea>
+                        <label for="floatingTextarea1">Student's answer</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#solution" role="button">Question's Solution</a>
+                    <span class="mx-3 badge bg-danger" id="notSet2">NOT SET</span><span class="mx-3 badge bg-success hide" id="set2">READY</span><br/>
+                    <div class="form-floating mb-3 collapse" id="solution">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 500px" onclick="validate2()" onkeyup="validate2()" name="solution" required></textarea>
+                        <label for="floatingTextarea2">Solution for the question</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#keywords" role="button">Question's Keywords</a>
+                    <span class="mx-3 badge bg-danger" id="notSet3">NOT SET</span><span class="mx-3 badge bg-success hide" id="set3">READY</span><br/>
+                    <div class="form-floating mb-3 collapse" id="keywords">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea3" style="height: 500px" onclick="validate3()" onkeyup="validate3()" name="keyword" required></textarea>
+                        <label for="floatingTextarea3">Keywords for the question</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 align-self-center">
+                <div class="form-floating mb-3" >
+                    <input type="text" class="form-control" name="limit" id="limit" class="form-control" placeholder="Mark Limit" required/>
+                    <label for="limit">Enter question mark limit</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-warning" type="submit">CALCULATE</button>
+            </div>
+        </form>
+
+        <form method="POST" action="/automate">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="filename" placeholder="Filename with extension (eg: sample.xlsx)" name="filename" required>
+                <label for="filename">Filename with extension (eg: sample.xlsx)</label>
+            </div>
+            <button class="btn btn-info row" type="submit">AUTOMATE</button>
+        </form>
+        </div>
+    </body>
+</html>
