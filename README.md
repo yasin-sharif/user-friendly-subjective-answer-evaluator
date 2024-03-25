@@ -12,15 +12,28 @@ Automating the traditional time intensive paper correction process with an NLP m
 * Automatic text formatting.
 
 ## Requirements
+* Desktop or Laptop
+* 8 GB RAM
+* 5 GB Storage
+* Internet connetion (optional)
 * Python 3.10
+* Flask
 * Google word2vec model as zip format
-* 
+* Browser
+* Excel / Any Equivalent
+* Any text editor
 
 ## System Architecture
+![project phase 1 arch diag font size 17](https://github.com/yasin-sharif/user-friendly-subjective-answer-evaluator/assets/105559022/29e86e64-1fec-454c-a549-e1ea3c774041)
 
 ## Output
+![Screenshot_21-3-2024_213156_localhost](https://github.com/yasin-sharif/user-friendly-subjective-answer-evaluator/assets/105559022/5c7384d1-1fd5-48f9-980e-4a24ac3e15c7)
+![Screenshot_22-3-2024_10157_localhost](https://github.com/yasin-sharif/user-friendly-subjective-answer-evaluator/assets/105559022/774ec979-f1c8-4ec3-a65f-fb636900675f)
+![Screenshot_22-3-2024_101626_localhost](https://github.com/yasin-sharif/user-friendly-subjective-answer-evaluator/assets/105559022/2fa6d7da-1ae6-4116-88ab-ee848c708e7d)
+![Screenshot_22-3-2024_101718_localhost](https://github.com/yasin-sharif/user-friendly-subjective-answer-evaluator/assets/105559022/c3eeabb7-b5a7-4a43-99d3-d15b785a64fe)
 
 ## Results and Impact
+This project provides the faculty with an easy to use evaluator with interactive user interface. Importantly the capability to evaluate the papers offline. It also provides high performance evaluation nearly as an experienced faculty in a domain within few seconds to save their time and effort, this model also works independent of domain, allowing it to use for a broad range. Finally, the capability to format response automatically and load responses automatically reduces the faculty burden even further.
 
 ## References
 1. Stoehr, F., Kämpgen, B., Müller, L. et al. Natural language processing for automatic evalu-ation of free-text answers — a feasibility study based on the European Diploma in Radiology examination. Insights Imaging 14, 150 (2023).
